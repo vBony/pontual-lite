@@ -1,0 +1,77 @@
+body {
+    background-color: #DBE4E6;
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+     
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    transition: 0.3s;
+}
+
+#app {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #272E38;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    color: #B3B8CD;
+    padding: 30px 0 0;
+}
+
+#header{
+    width: 90%;
+}
+
+#titulo{
+    color: white !important;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#titulo-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px 60px 0px;
+    width: 100%;
+}
+
+#voltar{
+    background-color: #0F1620;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#select-area{
+    width: 100%;
+    padding: 20px 0px;
+}
+
+#select-mes{
+    width: 100%;
+    border: none;
+    padding: 10px 8px;
+    border-radius: 5px;
+}
+
+#select-mes option{
+    padding: 10px 8px;
+    height: 20px;
+}
+
+@media screen and (max-width: 635px){
+    #app{
+        width: 90%;
+    }
+}

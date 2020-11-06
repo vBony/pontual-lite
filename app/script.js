@@ -10,7 +10,6 @@ $( document ).ready(function(){
     // var data = '06-11-2020';
 
     document.getElementById('hora').innerHTML = horas;
-    document.getElementById('hora-btn').innerHTML = horas;
     document.getElementById('data').innerHTML = data;
     
     var registros = new Array()
@@ -24,7 +23,6 @@ $( document ).ready(function(){
         data = agora.format('DD-MM-YYYY')
     
         document.getElementById('hora').innerHTML = horas;
-        document.getElementById('hora-btn').innerHTML = horas;
         document.getElementById('data').innerHTML = data;
     }, 1000)
     
@@ -56,6 +54,7 @@ $( document ).ready(function(){
     
     $('#botaoRegistrarHora').on('click', function(){
         registros.push(horas);
+        registrarDia();
         window.localStorage.setItem('registros_'+data, JSON.stringify(registros))
     
     
@@ -67,7 +66,7 @@ $( document ).ready(function(){
         mainElement.appendChild(element)
     })
     
-    $('#botaoFecharDia').on('click', function(){
+    function registrarDia(){
         registrosDia = registros
         // window.localStorage.getItem('registros_'+data)
 
@@ -81,13 +80,11 @@ $( document ).ready(function(){
             }
 
         })
-    })
+    }
 
-    $('#hora').on('click', function(){
-        var agora = moment()
-        console.log(agora.format('DD-MM-YYYY'));
-        console.log(agora.format('HH:MM:SS'));
-    })
+    $('#botaoCartaoPonto').on('click', function(){
+        window.location.href = "app/cartao-ponto/";
+    });
     
 })
 

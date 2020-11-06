@@ -39,8 +39,8 @@ body {
     border-radius: 5px;
 }
 
-#botaoFecharDia{
-    background-color: red;
+#botaoCartaoPonto{
+    background-color: #5bc0de;
 }
 
 #botaoRegistrarHora{
