@@ -1,0 +1,142 @@
+body {
+    background-color: #DBE4E6;
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+     
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    transition: 0.3s;
+}
+
+
+#app{
+    width: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #272E38;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    color: #B3B8CD;
+    padding: 30px 0 0;
+}
+
+.btn{
+    padding: 20px 10px; 
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    margin: 10px 0px 10px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#botaoFecharDia{
+    background-color: red;
+}
+
+#botaoRegistrarHora{
+    background-color: green;
+}
+
+#hora{
+    font-size: 45px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+#data{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#titulo{
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+}
+
+#hora-btn{
+    font-weight: bold;
+}
+
+#header{
+    color: white;
+    width: 90%;
+    background-color: #0F1620;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#body{
+    width: 90%;
+    text-align: center;
+}
+
+#footer{
+    width: 100%;
+    text-align: center;
+    font-size: 2px;
+    color: gray;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+#horaRegistrada{
+    padding: 10px;
+    background-color: #0F1620;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 200px;
+    font-weight: bold;
+}
+
+#horaRegistrada p{
+    padding: 5px 0px;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    /* border: 3px solid rgba(0, 0, 0, 0.4); */
+    width: 10px;
+    background-color: black;
+}
+
+@media screen and (max-width: 1145px){
+    #app{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    #app{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 570px){
+    #app{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 440px){
+    #app{
+        width: 98%;
+    }
+}
