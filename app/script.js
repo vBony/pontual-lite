@@ -72,7 +72,7 @@ $( document ).ready(function(){
         // window.localStorage.getItem('registros_'+data)
 
         $.ajax({
-            url: './backend.php',
+            url: '/app/backend.php',
             method: 'POST',
             data: {registros: registrosDia, data: data},
             dataType: 'json',
