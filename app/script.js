@@ -6,8 +6,8 @@ $( document ).ready(function(){
     var agora = moment()
     agora.locale('pt-br')
     var horas = agora.format('HH:mm:ss')
-    var data = agora.format('DD-MM-YYYY')
-    // var data = '06-11-2020';
+    // var data = agora.format('DD-MM-YYYY')
+    var data = '09-03-2022';
 
     document.getElementById('hora').innerHTML = horas;
     document.getElementById('data').innerHTML = data;
@@ -20,7 +20,7 @@ $( document ).ready(function(){
 
     
         horas = agora.format('HH:mm:ss')
-        data = agora.format('DD-MM-YYYY')
+        // data = agora.format('DD-MM-YYYY')
     
         document.getElementById('hora').innerHTML = horas;
         document.getElementById('data').innerHTML = data;

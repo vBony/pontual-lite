@@ -31,6 +31,11 @@ body {
     width: 90%;
 }
 
+#body{
+    width: 90%;
+    padding: 10px 0px;
+}
+
 #titulo{
     color: white !important;
     font-size: 25px;
@@ -68,6 +73,48 @@ body {
 #select-mes option{
     padding: 10px 8px;
     height: 20px;
+}
+
+#area-registros-wrapper{
+    padding: 10px 20px;   
+    background-color: #0F1620;
+    border-radius: 5px;
+    display: none;
+}
+
+.row-registros{
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0px;
+}
+
+.data-registros{
+    width: 20%;
+    color:#5BC0DE;
+    font-weight: bold;
+}
+
+.horarios-registros{
+    width: 80%;
+    color: white;
+}
+
+#header-registros{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#titulo-data-registros{
+    width: 20%;
+    color: white;
+    font-weight: bold;
+}
+
+#titulo-horarios-registros{
+    width: 80%;
+    color: white;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 635px){

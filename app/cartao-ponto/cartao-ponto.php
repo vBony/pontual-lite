@@ -17,3 +17,25 @@ if($_POST['action'] && $_POST['action'] == 'getMeses'){
 
     echo json_encode($datas);
 }
+
+if($_POST['action'] && $_POST['action'] == 'getRegistroMes'){
+    $db = new txtdb();
+
+    if($_POST['mesAno']){
+        $mes_ano = explode(';',$_POST['mesAno']);
+        $mes = $mes_ano[0];
+        $ano = $mes_ano[1];
+
+        $registros = $db->select('registros', array('mes' => $mes, 'ano' => $ano));
+        $response = array();
+        $i = 0;
+
+        foreach($registros as $registro){
+            $i++;
+            $response[$i]['registros'] = explode(';', $registro['horarios']);
+            $response[$i]['data'] = $registro['dia'].'-'.$registro['mes'];
+        }
+
+        echo json_encode($response);
+    }
+}
