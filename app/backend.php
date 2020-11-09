@@ -1,6 +1,6 @@
 <?php
 require 'txtdb.class.php';
-if($_POST['registros']){
+if(!empty($_POST['registros'])){
     $registros_novos = $_POST['registros'];
     $data = explode('-', $_POST['data']);
     $dia = $data[0];
@@ -32,9 +32,19 @@ if($_POST['registros']){
         ]);
     }
 }
-    // $teste = $db->select('registros');
 
-    // print_r($teste);
+if($_POST['action'] === 'getRegistros'){
+    $db = new txtdb();
 
+    $data = explode("-", $_POST['data']);
 
-    // print_r($teste);
+    $registros = $db->select('registros', array(
+        'dia' => $data[0],
+        'mes' => $data[1],
+        'ano' => $data[2]
+    ));
+
+    if(!empty($registros)){
+        echo json_encode($registros);
+    }
+}

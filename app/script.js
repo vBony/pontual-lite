@@ -26,28 +26,49 @@ $( document ).ready(function(){
         document.getElementById('data').innerHTML = data;
     }, 1000)
     
-    if(window.localStorage.getItem('registros_'+data) === null){
-        window.localStorage.setItem('registros_'+data, '[]')
-        registros = JSON.parse(window.localStorage.getItem('registros_'+data))
-    
-        var mainElement = document.getElementById('horaRegistrada');
-        var element = document.createElement('p')
-        element.innerHTML = "Nenhum registro encontrado!"
-        mainElement.appendChild(element)
+    if(window.localStorage.getItem('registros_'+data) === null || window.localStorage.getItem('registros_'+data) === '[]'){
+
+        $.ajax({
+            url: '/app/backend.php',
+            method: 'POST',
+            data: {action: 'getRegistros', data: data},
+            success: function(resp){
+                if(resp){
+
+                    var horariosDb = JSON.parse(resp);
+                    var key = Object.keys(horariosDb)
+                    horariosDb = horariosDb[key]['horarios'].split(';');
+                    dbForLocalStorage(horariosDb)
+                    renderMarcacoes(horariosDb);
+
+                }else{
+                    if(window.localStorage.getItem('registros_'+data) === null){
+
+                        window.localStorage.setItem('registros_'+data, '[]')
+                        registros = JSON.parse(window.localStorage.getItem('registros_'+data))
+                    
+                        var mainElement = document.getElementById('horaRegistrada');
+                        var element = document.createElement('p')
+                        element.innerHTML = "Nenhum registro encontrado!"
+                        mainElement.appendChild(element)
+
+                    }else{
+
+                        registros = JSON.parse(window.localStorage.getItem('registros_'+data))
+                    
+                        var mainElement = document.getElementById('horaRegistrada');
+                        var element = document.createElement('p')
+                        element.innerHTML = "Nenhum registro encontrado!"
+                        mainElement.appendChild(element)
+
+                    }
+                }
+            }
+        })
     
     }else{
         registros = JSON.parse(window.localStorage.getItem('registros_'+data))
-    
-        var mainElement = document.getElementById('horaRegistrada');
-    
-        for(var i = 0; i < registros.length; i++){
-            var mainElement = document.getElementById('horaRegistrada');
-            var item = registros[i]
-            var element = document.createElement('p')
-            element.value = item
-            element.innerHTML = "Marcação registrada às: "+item
-            mainElement.appendChild(element)
-        }
+        renderMarcacoes(registros);
     }
     
     
@@ -85,6 +106,23 @@ $( document ).ready(function(){
     $('#botaoCartaoPonto').on('click', function(){
         window.location.href = "app/cartao-ponto/";
     });
+
+    function dbForLocalStorage(horarios){
+        var jsonHorarios = JSON.stringify(horarios);
+        window.localStorage.setItem('registros_'+data, jsonHorarios)
+    }
+
+    function renderMarcacoes(marcacoes){
+        $('#horasRegistrada').html('');
+        for(var i = 0; i < marcacoes.length; i++){
+            var mainElement = document.getElementById('horaRegistrada');
+            var item = marcacoes[i]
+            var element = document.createElement('p')
+            element.value = item
+            element.innerHTML = "Marcação registrada às: "+item
+            mainElement.appendChild(element)
+        }
+    }
     
 })
 
