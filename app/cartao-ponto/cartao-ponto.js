@@ -33,16 +33,15 @@ $( document ).ready(function(){
                     // var horarios = registros['registros'].join('   ');
 
                     $.each(registros, function(index, value){
-                        $('#area-registros-wrapper').fadeIn('fast')
+                        $('#area-registros-wrapper').slideDown('fast')
                         $('#area-registros').append(
                             "<div class='row-registros'>"+
                                 "<div class='data-registros'>"+value['data']+"</div>"+
                                 "<div class='horarios-registros'>"+value['registros'].join("     ")+"</div>"
-                        +"</div>")
+                            +"</div>")
                     });
                 }else{
-                    $('#area-registros').html('');
-                    $('#area-registros-wrapper').fadeOut('fast')
+                    $('#area-registros-wrapper').slideUp('fast')
                 }
             }
         })

@@ -31,9 +31,11 @@ if(!empty($_POST['registros'])){
             'horarios' => $registros_novos
         ]);
     }
+
+    echo 'Done!';
 }
 
-if($_POST['action'] === 'getRegistros'){
+if(isset($_POST['action']) && !empty($_POST['action'] === 'getRegistros')){
     $db = new txtdb();
 
     $data = explode("-", $_POST['data']);
