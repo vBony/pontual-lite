@@ -33,13 +33,14 @@ $( document ).ready(function(){
                     // var horarios = registros['registros'].join('   ');
 
                     $.each(registros, function(index, value){
-                        $('#area-registros-wrapper').slideDown('fast')
                         $('#area-registros').append(
                             "<div class='row-registros'>"+
                                 "<div class='data-registros'>"+value['data']+"</div>"+
                                 "<div class='horarios-registros'>"+value['registros'].join("     ")+"</div>"
                             +"</div>")
                     });
+
+                    $('#area-registros-wrapper').slideDown('fast')
                 }else{
                     $('#area-registros-wrapper').slideUp('fast')
                 }
