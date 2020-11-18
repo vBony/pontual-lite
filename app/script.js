@@ -7,10 +7,15 @@ $( document ).ready(function(){
     agora.locale('pt-br')
     var horas = agora.format('HH:mm:ss')
     var data = agora.format('DD-MM-YYYY')
+    var diaSemana = agora.day()
+
+    var dataView = dataView = agora.format('DD   MM   YYYY')
+
+    $('#'+diaSemana).addClass('today')
     // var data = '09-03-2022';
 
     document.getElementById('hora').innerHTML = horas;
-    document.getElementById('data').innerHTML = data;
+    document.getElementById('data').innerHTML = dataView;
     
     var registros = new Array()
     
@@ -21,9 +26,11 @@ $( document ).ready(function(){
     
         horas = agora.format('HH:mm:ss')
         data = agora.format('DD-MM-YYYY')
+
+        dataView = agora.format('DD   MM   YYYY')
     
         document.getElementById('hora').innerHTML = horas;
-        document.getElementById('data').innerHTML = data;
+        document.getElementById('data').innerHTML = dataView;
     }, 1000)
     
     if(window.localStorage.getItem('registros_'+data) === null || window.localStorage.getItem('registros_'+data) === '[]'){
