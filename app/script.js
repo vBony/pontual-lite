@@ -31,6 +31,7 @@ $( document ).ready(function(){
     
         document.getElementById('hora').innerHTML = horas;
         document.getElementById('data').innerHTML = dataView;
+        $('title').text('pontual - '+horas)
     }, 1000)
     
     if(window.localStorage.getItem('registros_'+data) === null || window.localStorage.getItem('registros_'+data) === '[]'){
