@@ -76,7 +76,7 @@ body {
 }
 
 #area-registros-wrapper{
-    padding: 10px 20px;   
+    padding: 10px 10px 10px 20px;   
     background-color: #0F1620;
     border-radius: 5px;
     display: none;
@@ -115,6 +115,22 @@ body {
     width: 80%;
     color: white;
     font-weight: bold;
+}
+
+#area-registros{
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    /* border: 3px solid rgba(0, 0, 0, 0.4); */
+    width: 10px;
+    background-color: black;
 }
 
 @media screen and (max-width: 635px){
