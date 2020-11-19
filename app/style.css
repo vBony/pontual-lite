@@ -131,6 +131,9 @@ body {
     overflow-y: scroll;
     height: 200px;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #horaRegistrada p{
@@ -139,6 +142,18 @@ body {
     background-color: rgba(0, 117, 0, 0.178);
     border: 2px solid rgba(10, 185, 10, 0.795);
     border-radius: 10px;
+    width: 100%;
+
+    animation: fadeIn ease 0.5s;
+}
+
+.registroNotFound{
+    color:rgba(255, 0, 0) !important;
+    padding: 10px 0px;
+    background-color: rgba(255, 0, 0, 0.178) !important;
+    border: 2px solid rgba(255, 0, 0, 0.795) !important;
+    border-radius: 10px;
+    /* display: none; */
 
     animation: fadeIn ease 0.5s;
 }
@@ -146,7 +161,7 @@ body {
 
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 5px;
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 6px;

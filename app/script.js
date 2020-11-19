@@ -58,8 +58,8 @@ $( document ).ready(function(){
                         var mainElement = document.getElementById('horaRegistrada');
                         var element = document.createElement('p')
                         element.innerHTML = "Nenhum registro encontrado!"
+                        element.className = "registroNotFound"
                         mainElement.appendChild(element)
-
                     }else{
 
                         registros = JSON.parse(window.localStorage.getItem('registros_'+data))
@@ -67,8 +67,8 @@ $( document ).ready(function(){
                         var mainElement = document.getElementById('horaRegistrada');
                         var element = document.createElement('p')
                         element.innerHTML = "Nenhum registro encontrado!"
+                        element.className = "registroNotFound"
                         mainElement.appendChild(element)
-
                     }
                 }
             }
@@ -82,6 +82,7 @@ $( document ).ready(function(){
     
     
     $('#botaoRegistrarHora').on('click', function(){
+        $('.registroNotFound').hide()
         registros.push(horas);
         registrarDia();
         window.localStorage.setItem('registros_'+data, JSON.stringify(registros))
